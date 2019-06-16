@@ -1,0 +1,32 @@
+<div class="container" fxLayout="row" fxLayoutGap="10px">
+  <div fxFlex="15%">
+    <app-filter></app-filter>
+  </div>
+  <div fxFlex="85%">
+    <app-search></app-search>
+    <mat-card>
+      <form [formGroup]="sortForm" >
+        <span class="total">{{establishmentlist.length}} Results</span>
+     
+        <div class="sort"><span>SORT BY</span> &nbsp;
+          <span (click)="ratingFiter()"><mat-icon>swap_vertical</mat-icon>Ratings Only</span>&nbsp;
+          <span (click)="priceFilter()"><mat-icon>swap_vertical</mat-icon>Price Only</span>
+          </div>
+          <div class="clear"></div>
+      
+      
+      <br>
+      <div fxLayout="row wrap" fxLayoutGap="10px">
+        <div *ngFor="let hotel of establishmentlist" class="item">
+          <app-booking-item fxFlex fxLayout="row" [hotelInstance]="hotel"></app-booking-item>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+    
+    </form>
+    </mat-card>
+  </div>
+
+</div>
+
+

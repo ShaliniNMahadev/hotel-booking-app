@@ -1,0 +1,11 @@
+
+  <img src="assets/images/hotel-1.jpg" width="250px" height="200px">
+  <div class="hoteldesc">
+    <h2>{{hotelInstance.name}}</h2>
+    <p>{{hotelInstance.location}},{{hotelInstance.city}}</p>
+    <span class="rating"><mat-icon>star</mat-icon>{{hotelInstance.averagerating}}</span>&nbsp;<span class="price">{{hotelInstance.price|currency:'&#8377;'}}</span>
+    <div>
+    <button mat-raised-button class="viewbtn">View Details</button>&nbsp;&nbsp;
+    <button mat-raised-button color="primary">Book Now</button>
+    </div>  
+</div>

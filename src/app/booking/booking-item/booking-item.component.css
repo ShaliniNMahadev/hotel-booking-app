@@ -1,0 +1,10 @@
+.rating{ font-size: 12px; color:#fff; background-color: green;
+    padding: 5px 5%; text-align: center;}
+mat-icon{ font-size: 12px; width:15px}  
+
+.hoteldesc{ padding:10px;}
+
+.viewbtn{background-color: darkturquoise; color:#fff;}
+
+.item{ margin:5px 0%;}
+.price{ font-weight: bold; font-size: 16px;}

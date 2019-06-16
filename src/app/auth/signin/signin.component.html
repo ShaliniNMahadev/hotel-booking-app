@@ -1,0 +1,31 @@
+<div class="form">
+    <mat-card>
+    <h3>Sign In</h3>
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit(signinForm.value)">
+
+                <div class="signup-container">
+                        <mat-form-field>  
+                        <input formControlName="email" matInput placeholder="Email">  
+                            </mat-form-field>  
+                            <mat-error *ngIf="!signinForm.get('email').valid && signinForm.get('email').touched"> Email Required</mat-error>      
+                        </div>
+    
+                        <div class="signup-container">
+                                <mat-form-field>  
+                                <input formControlName="password" matInput placeholder="Password" type="password">  
+                                    </mat-form-field>  
+                                    <mat-error>  
+                                        <span *ngIf="!signinForm.get('password').valid && signinForm.get('password').touched">Password Required!</span>  
+                                    </mat-error> 
+                                </div>        
+                    
+                   
+    <br>
+            <div class="signup-submit">        
+            <button mat-raised-button color="primary" [disabled]="!signinForm.valid">Sign In</button>          
+                </div>
+    
+    </form>
+    
+    </mat-card>
+    </div>

@@ -1,0 +1,60 @@
+<div class="form">
+<mat-card>
+<h3>Sign Up</h3>
+<form [formGroup]="regiForm" (ngSubmit)="onSubmit(regiForm.value)">
+
+    <div class="signup-container">
+        <mat-form-field>  
+        <input formControlName="name" matInput placeholder="Name">  
+            </mat-form-field>  
+            <mat-error *ngIf="!regiForm.get('name').valid && regiForm.get('name').touched">  Please enter Name </mat-error>      
+        </div> 
+
+        <div class="signup-container">
+                    <mat-form-field >  
+                            <input formControlName="email" matInput placeholder="Email">  
+                            <mat-hint>hint : demo@demo.com</mat-hint>  
+                            <mat-error>  
+                                <span *ngIf="!regiForm.get('email').valid && regiForm.get('email').touched">Enter proper Email !!!</span>  
+                            </mat-error>  
+                        </mat-form-field>  
+
+            </div>
+
+            <div class="signup-container">
+                    <mat-form-field>  
+                    <input formControlName="phonenumber" matInput placeholder="Phone Number" type="number">
+                    <mat-hint>hint : Allow only numbers</mat-hint>  
+                        </mat-form-field>  
+                        <mat-error>  
+                            <span *ngIf="!regiForm.get('phonenumber').valid && regiForm.get('phonenumber').touched">Enter Valid Phone Number !!!</span>  
+                        </mat-error>      
+                    </div>
+                    
+                    <div class="signup-container">
+                            <mat-form-field>  
+                            <input formControlName="password" matInput placeholder="Password" type="password">  
+                                </mat-form-field>  
+                                <mat-error>  
+                                    <span *ngIf="!regiForm.get('password').valid && regiForm.get('password').touched">Password should contain min number, Uppercase and lower case</span>  
+                                </mat-error> 
+                            </div>        
+                
+                <div class="signup-container">
+                        <p>Role</p>
+                        <mat-radio-group formControlName="role"> 
+                                <span class="rdnbrn"><mat-radio-button value="user">User</mat-radio-button> </span>
+                            <span class="rdnbrn"><mat-radio-button value="merchant">Merchant</mat-radio-button></span> 
+                        </mat-radio-group>
+                          
+                        
+                </div>
+<br>
+        <div class="signup-submit">        
+        <button mat-raised-button color="primary" [disabled]="!regiForm.valid">Submit</button>          
+            </div>
+
+</form>
+
+</mat-card>
+</div>
