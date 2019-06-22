@@ -8,9 +8,7 @@ import { EstablishmentService } from 'src/app/shared/establishment.service';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
- 
-filterForm: FormGroup;
-
+  filterForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private establishService: EstablishmentService) { }
 
   ngOnInit() {
@@ -18,8 +16,8 @@ filterForm: FormGroup;
       PriceMin: ['1000'],
       PriceMax: ['10000'],
       averagerating: [1],
-      search:[''],
-      homestay:[true],
+      search: [''],
+      homestay: [true],
       hotelstay: [true]
     });
 
@@ -28,11 +26,7 @@ filterForm: FormGroup;
     });
 
   }
-  setStar(n:Number)
-    {
-      console.log(n);
-      this.filterForm.get('averagerating').setValue(n);
-      
-    }
-  
-} 
+  setStar(n: Number) {
+    this.filterForm.get('averagerating').setValue(n);
+  }
+}

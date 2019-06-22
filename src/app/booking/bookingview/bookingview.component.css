@@ -1,0 +1,13 @@
+.hotelname{ float:left; width: 70%;}
+.hotelprice{ float:right; width:30%;}
+.clear{ clear:both;}
+.rating{ background-color: green; color: #fff; padding:5px;}
+mat-icon{ font-size: 14px;}
+.user{ float:left; width:5%;}
+.user img{border-radius: 100%; height: 60px; width:60px;}
+.desc{ float:right; width:92%;  margin-left:2%;}
+.reviewlist{ padding:10px 0%;}
+h3{ border-bottom: 1px solid #000; display:inline;}
+.reviewdiv{background-color: #f4f2f254; }
+p{ margin:0px 0px 10px 0px;}
+.user p{text-align: center; font-weight: bold;}

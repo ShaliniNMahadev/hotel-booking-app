@@ -1,10 +1,12 @@
 .rating{ font-size: 12px; color:#fff; background-color: green;
     padding: 5px 5%; text-align: center;}
-mat-icon{ font-size: 12px; width:15px}  
+mat-icon{ font-size: 12px; width:15px; cursor: pointer;}  
 
 .hoteldesc{ padding:10px;}
 
-.viewbtn{background-color: darkturquoise; color:#fff;}
+.viewbtn{background-color: darkturquoise; color:#fff; cursor: pointer;}
 
 .item{ margin:5px 0%;}
 .price{ font-weight: bold; font-size: 16px;}
+.viewbtn a{ text-decoration: none; color:#fff;}
+.bookbtn a{ text-decoration: none; color:#fff;}

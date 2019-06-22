@@ -1,0 +1,29 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+
+  .profileimg {   
+    margin: 100px 15%; 
+width:300px; }
+ 
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+  
+mat-card{
+  width: 40%;
+  float: right;
+}
+
+.profile{ width:95%; margin:auto;    margin-top: 20px;}
+
+

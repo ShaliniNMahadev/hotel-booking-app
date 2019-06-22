@@ -1,6 +1,7 @@
+<div class="bgimage">
 <div class="form">
-<mat-card>
-<h3>Sign Up</h3>
+    <mat-card>
+<h2>Sign Up</h2>
 <form [formGroup]="regiForm" (ngSubmit)="onSubmit(regiForm.value)">
 
     <div class="signup-container">
@@ -33,28 +34,35 @@
                     
                     <div class="signup-container">
                             <mat-form-field>  
-                            <input formControlName="password" matInput placeholder="Password" type="password">  
+                            <!-- <input formControlName="password" matInput placeholder="Password" type="password">   -->
+                            <input matInput placeholder="Enter your password" formControlName="password"
+                          [type]="hide ? 'text' : 'password'">
+                          <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                          </span>
+
                                 </mat-form-field>  
                                 <mat-error>  
-                                    <span *ngIf="!regiForm.get('password').valid && regiForm.get('password').touched">Password should contain min number, Uppercase and lower case</span>  
+                                    <span *ngIf="!regiForm.get('password').valid && regiForm.get('password').touched">Password must contain atleast length of 8 characters one Lowercase, 
+                                        One Uppercase letters, one Numbers and One Special characters</span>  
                                 </mat-error> 
                             </div>        
                 
                 <div class="signup-container">
                         <p>Role</p>
                         <mat-radio-group formControlName="role"> 
-                                <span class="rdnbrn"><mat-radio-button value="user">User</mat-radio-button> </span>
-                            <span class="rdnbrn"><mat-radio-button value="merchant">Merchant</mat-radio-button></span> 
-                        </mat-radio-group>
-                          
-                        
+                                <span class="rdnbrn"><mat-radio-button value="user" color="accent">User</mat-radio-button> </span>
+                            <span class="rdnbrn"><mat-radio-button value="merchant" color="accent">Merchant</mat-radio-button></span> 
+                        </mat-radio-group>     
                 </div>
 <br>
         <div class="signup-submit">        
-        <button mat-raised-button color="primary" [disabled]="!regiForm.valid">Submit</button>          
-            </div>
-
+        <button mat-raised-button color="primary" [disabled]="!regiForm.valid" >Submit</button>          
+    </div>
 </form>
 
+<p>Already Registered? <b><a routerLink="/signin">Sign In</a></b></p>
+
 </mat-card>
+</div>
 </div>

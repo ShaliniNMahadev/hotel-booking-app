@@ -1,10 +1,15 @@
+
 <div class="container" fxLayout="row" fxLayoutGap="10px">
-  <div fxFlex="15%">
+  <div fxFlex="18%">
+      <mat-card>
     <app-filter></app-filter>
+    </mat-card>
+  
   </div>
   <div fxFlex="85%">
-    <app-search></app-search>
+      <mat-card><app-search></app-search></mat-card>
     <mat-card>
+
       <form [formGroup]="sortForm" >
         <span class="total">{{establishmentlist.length}} Results</span>
      

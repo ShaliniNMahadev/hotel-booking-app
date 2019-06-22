@@ -1,17 +1,20 @@
-.invalid-feedback{ color:red;}
-.signup-container{
-    display: flex;
-  flex-direction: column;
-}
+
 
 .signup-container > * {
   width: 100%;
   margin:5px 0%;
 }
-.form{
+.signinform{
 width:50%; margin:auto;
+padding:120px 0%; opacity: 0.8;
 }
 mat-error{ font-size: 12px;}
+
+.bgimage{ background-image: url("/src/assets/images/mybooking1.jpg");
+background-repeat: no-repeat; background-position: center;
+height: 560px;
+background-size: cover;}
+h2{ color: blueviolet; }
 
 
 

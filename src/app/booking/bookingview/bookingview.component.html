@@ -1,3 +1,69 @@
-<p>
-  bookingview works!
-</p>
+<div>
+    <img src="/src/assets/images/mybooking2.jpg" style="max-width:100%;">
+
+<mat-card>
+        <div *ngIf="hotel" class ="hotelname">
+            <h2>{{hotel.name}}</h2>
+            <h4>{{hotel.location}}, {{hotel.city}}</h4>
+            <p><b>Rating</b> : <span class="rating">
+                <mat-icon >star</mat-icon>{{hotel.averagerating}}</span>
+            </p>
+            <p><b>Facilities</b>: {{hotel.amenities}}</p>  
+    </div>
+
+    <div class="hotelprice">
+        <h2>Rs. {{hotel.price}}/ Day</h2>
+        <p><b>No. of Days </b>: {{count}} Days</p>
+        <p><b>Total Price </b>: Rs. {{hotel.price *count}}</p>
+        <button mat-raised-button color="primary" (click)="bookNow()">Book Now</button>
+    </div>
+   
+    <div class="clear"></div>
+
+    <form [formGroup]="dateForm">
+        <div class="search" > 
+            <span>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="From Date" formControlName="searchdate">
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field> 
+            </span>
+            &nbsp;&nbsp;
+            <span>
+                <mat-form-field>
+                        <input matInput [matDatepicker]="pickerTo" placeholder="To Date" formControlName="toDate" (dateChange)="calculateDays()" [min]="dateForm.value.searchdate">
+                          <mat-datepicker-toggle matSuffix [for]="pickerTo">
+                              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                              </mat-datepicker-toggle>
+                              <mat-datepicker #pickerTo></mat-datepicker>
+                          </mat-form-field> 
+                        </span>
+                </div>      
+    </form>
+</mat-card>
+
+<mat-card style="margin:5px 0%;">
+    <span class="reviewdiv">
+    <h3>Reviews</h3>
+    <div *ngFor = "let review of hotel.reviews" class="reviewlist">
+      
+ <mat-card>
+    <div class="user">
+        <img src="/src/assets/images/user.png">
+        <p>{{review.reviewed_by.name}}</p>
+    </div>
+    <div class="desc">
+       <span *ngFor="let count of [].constructor(review.rating)"><mat-icon>star</mat-icon></span>
+       <!-- <mat-icon>star</mat-icon>{{review.rating}} -->
+        <p>{{review.reviewcontent}}</p>
+    </div>
+
+    <div class="clear"></div>
+</mat-card>
+
+</div>
+</span>
+</mat-card>

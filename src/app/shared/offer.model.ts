@@ -1,7 +1,6 @@
-import { User } from "./user.model";
+import { User } from './user.model';
 
-export class Offer
-{
+export class Offer {
 proposedBy: User[];
 accepted_by: User[];
 merchant: User[];

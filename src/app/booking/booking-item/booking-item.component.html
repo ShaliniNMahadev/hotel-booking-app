@@ -5,7 +5,9 @@
     <p>{{hotelInstance.location}},{{hotelInstance.city}}</p>
     <span class="rating"><mat-icon>star</mat-icon>{{hotelInstance.averagerating}}</span>&nbsp;<span class="price">{{hotelInstance.price|currency:'&#8377;'}}</span>
     <div>
-    <button mat-raised-button class="viewbtn">View Details</button>&nbsp;&nbsp;
-    <button mat-raised-button color="primary">Book Now</button>
-    </div>  
+    <button mat-raised-button class="viewbtn"><a routerLink="/bookingview/{{hotelInstance.id}}">View Details</a></button>&nbsp;&nbsp;
+    <button mat-raised-button color="primary" class="bookbtn"><a routerLink="/bookingview/{{hotelInstance.id}}">Book Now</a></button>
+    </div> 
+  
+
 </div>

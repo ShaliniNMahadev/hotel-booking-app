@@ -15,7 +15,7 @@ import { SearchComponent } from './booking/search/search.component';
 import { FilterComponent } from './booking/filter/filter.component';
 import { BookinglistComponent } from './booking/bookinglist/bookinglist.component';
 import { BookingviewComponent } from './booking/bookingview/bookingview.component';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
@@ -27,6 +27,14 @@ import { BookingItemComponent } from './booking/booking-item/booking-item.compon
 import 'hammerjs';
 import { StarRatingModule } from 'angular-star-rating';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './booking/home/home.component';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { HeaderComponent } from './header/header.component';
+import { MybookingComponent } from './booking/mybooking/mybooking.component';
+import { MyprofileComponent } from './profile/myprofile/myprofile.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -37,7 +45,11 @@ import { AppRoutingModule } from './app-routing.module';
     FilterComponent,
     BookinglistComponent,
     BookingviewComponent,
-    BookingItemComponent
+    BookingItemComponent,
+    HomeComponent,
+    HeaderComponent,
+    MybookingComponent,
+    MyprofileComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +70,11 @@ import { AppRoutingModule } from './app-routing.module';
     MatCheckboxModule,
     MatSliderModule,
     StarRatingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule,
+    HttpClientModule,
+    MatTabsModule,
+    MatDialogModule
     ],
   providers: [],
   bootstrap: [AppComponent]

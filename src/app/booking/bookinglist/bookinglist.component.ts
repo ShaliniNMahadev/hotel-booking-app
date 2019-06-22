@@ -21,64 +21,43 @@ export class BookinglistComponent implements OnInit {
 
     });
 
-  this.establishService.establishSubject.subscribe(filterdata=>{
-    this.establishmentlist=filterdata;
-    this.getSort();
-  })
-  this.establishService.getEstablishment();
-  }
-
-  ratingFiter(){
-    if(this.averageRating == 1)
-    {
-      this.averageRating=2;
-    }
-    else
-    {
-      this.averageRating=1;
-    }
-    this.price=0;
-    this.getSort();
-  }
-
-  priceFilter()
-  {
-    if(this.price == 1)
-      {
-        this.price=2;
-      }
-      else 
-      {
-        this.price=1;
-      }
-      this.averageRating=0;
+    this.establishService.establishSubject.subscribe(filterdata => {
+      this.establishmentlist = filterdata;
       this.getSort();
+    });
+    this.establishService.getEstablishment();
+  }
+
+  ratingFiter() {
+    if (this.averageRating === 2) {
+      this.averageRating = 1;
+    } else {
+      this.averageRating = 2;
+    }
+    this.price = 0;
+    this.getSort();
+  }
+
+  priceFilter() {
+    if (this.price === 2) {
+      this.price = 1;
+    } else {
+      this.price = 2;
+    }
+    this.averageRating = 0;
+    this.getSort();
   }
 
 
-  getSort(){
-    if(this.averageRating == 1)
-    {
-    this.establishmentlist.sort((a, b) => a.averagerating - b.averagerating);
+  getSort() {
+    if (this.averageRating === 1) {
+      this.establishmentlist.sort((a, b) => a.averagerating - b.averagerating);
+    } else if (this.averageRating === 2) {
+      this.establishmentlist.sort((a, b) => b.averagerating - a.averagerating);
+    } else if (this.price === 1) {
+      this.establishmentlist.sort((a, b) => a.price - b.price);
+    } else if (this.price === 2) {
+      this.establishmentlist.sort((a, b) => b.price - a.price);
     }
-    else if(this.averageRating == 2)
-    {
-    this.establishmentlist.sort((a, b) => b.averagerating - a.averagerating);
-    }
-
-    if(this.price == 1)
-    {
-    this.establishmentlist.sort((a, b) => a.price - b.price);
-    }
-    else if(this.price == 2)
-    {
-    this.establishmentlist.sort((a, b) => b.price - a.price);
-    }
-
-    }
-
-    
-
-    
-    
+  }
 }

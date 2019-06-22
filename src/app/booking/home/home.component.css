@@ -1,0 +1,12 @@
+
+.homediv{ background-image: url('/src/assets/images/hotel-1.jpg'); 
+    background-repeat: no-repeat;   
+    height: 560px;
+    background-size: cover;}
+
+    .homesearch{ text-align: center; padding:220px 0%;}
+    .bgcolor{ background-color: rgba(255,255,255,.69);     
+        padding: 20px 0% 5px 0%;
+        margin: 0px 10%;
+        color: #000000; border-radius: 10px;} 
+        .mybookbtn{ display: none!important;}

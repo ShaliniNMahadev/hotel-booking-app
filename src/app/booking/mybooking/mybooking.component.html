@@ -1,0 +1,36 @@
+<div class="mybooking">
+  <mat-tab-group>
+    <mat-tab label="Past Bookings">
+       <div  fxLayout="row wrap" *ngFor="let list of checkin" class="bookinggap">
+        <img src="/src/assets/images/hotel-5.jpg" style="height: 285px;width:380px;">
+        <div class="bookingcontent">
+          <h3>{{list.Booked_by.name}}</h3>
+            <h3>{{list.establishment.name}}</h3>
+          <p><b>Location:</b>&nbsp;&nbsp;Banglore</p>
+          <p><b>Facilities:</b> {{list.establishment.amenities}}</p>
+          <p><span class="rating"><mat-icon>star</mat-icon>{{list.establishment.averagerating}}</span></p>
+          <h4>{{list.booking_cost | currency:'&#8377;'}}, (1 Room, {{list.no_of_person}} Guest)</h4>
+          <h4>CheckIn- {{list.Checkin_date|date}}, CheckOut- {{list.checkout_date|date}}</h4>
+          <button mat-raised-button color="primary" (click) = "booknow()">Book</button>&nbsp;
+          <button mat-raised-button class="button" (click) = "getValue()">Post Review</button>&nbsp;
+          <button mat-raised-button color="primary" (click) = "getComplaint()">Raise Complaint </button>&nbsp;
+          
+        </div>
+       </div>  
+    </mat-tab>
+    <mat-tab label="Upcoming Bookings">
+        <div fxLayout="row wrap" *ngFor="let list of checkout" class="bookinggap">
+            <img src="/src/assets/images/hotel-3.jpg" style="height: 224px;width:380px;">
+            <div class="bookingcontent">
+                <h3>{{list.Booked_by.name}}</h3>
+                <h3>{{list.establishment.name}}</h3>
+                <p><b>Location:</b> &nbsp;&nbsp;Banglore</p>
+                <p><b>Facilities:</b>{{list.establishment.amenities}}</p>>
+                <p><span class="rating"><mat-icon>star</mat-icon>{{list.establishment.averagerating}}</span></p>
+                <h4>{{list.booking_cost | currency:'&#8377;'}}, (1 Room, {{list.no_of_person}} Guest)</h4>
+                <h4>Check In - {{list.Checkin_date|date}}, CheckOut - {{list.checkout_date|date}}</h4>
+            </div>
+           </div> 
+   </mat-tab>
+  </mat-tab-group>
+</div>

@@ -4,13 +4,13 @@
    
         <div>
             <mat-form-field apearance="outline">
-                    <input placeholder="Search by Hotel" matInput  [matAutocomplete]="auto" formControlName="search">
-                    <mat-autocomplete #auto="matAutocomplete">
+                    <input placeholder="Search by Hotel" matInput formControlName="search">
+                    <!-- <mat-autocomplete #auto="matAutocomplete">
                       <mat-option *ngFor="let option of options" [value]="option">
                         {{option}}
                       </mat-option>
-                    </mat-autocomplete>
-                    <mat-icon matPrefix>search</mat-icon>
+                    </mat-autocomplete>-->
+                    <mat-icon matPrefix>search</mat-icon> 
                   </mat-form-field>
                 </div>
                 <br>
@@ -24,7 +24,6 @@
 <br>
 <mat-divider></mat-divider>
 
-<h4>Location</h4>
 
     <!-- <mat-form-field >
         <input placeholder="Choose Location" matInput [formControl]="myControl" [matAutocomplete]="auto">
@@ -35,13 +34,24 @@
         </mat-autocomplete>
       </mat-form-field> -->
  
-      
+ 
+<!-- <h4>Location</h4>     
 <mat-checkbox>Gandhipuram</mat-checkbox><br>
 <mat-checkbox>KR puram</mat-checkbox><br>
 <mat-checkbox>Gandhipuram</mat-checkbox><br>
 <mat-checkbox>KR puram</mat-checkbox><br>
 
 <br>
+<mat-divider></mat-divider> -->
+
+<h4>Price</h4>
+
+<mat-slider formControlName = "PriceMin" [min]="1000" [max]="10000">
+</mat-slider>
+<br>
+<span>min: {{filterForm.value.PriceMin}}</span>&nbsp;
+<span style="margin-left:10%;">max: {{filterForm.value.PriceMax}}</span>
+
 <mat-divider></mat-divider>
 
 <h4>Ratings</h4>
@@ -61,14 +71,4 @@
             <mat-icon *ngFor="let i of [1]">star</mat-icon><span>& up</span>
         </div>
 
-<mat-divider></mat-divider>
-
-<h4>Price</h4>
-
-<mat-slider [min]="1000" [max]="10000" formControlName = "PriceMin">
-</mat-slider>
-<p>
-<span>{{filterForm.value.PriceMin}}</span>&nbsp;
-<span>{{filterForm.value.PriceMax}}</span>
-</p>
 </form>

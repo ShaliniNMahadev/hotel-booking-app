@@ -1,12 +1,10 @@
-import { User } from "./user.model";
-import { Establishment } from "./establishment.model";
+import { User } from './user.model';
+import { Establishment } from './establishment.model';
 
-export class Review
-{
+export class Review {
 id: number;
 rating: number;
-reviewed_by: User[];
-establishment: Establishment[];
+reviewed_by: User;
+establishment: Establishment;
 reviewcontent: string;
-
 }

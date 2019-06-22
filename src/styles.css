@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-body{ font-size: 14px;}
-.main{ width:98%; margin:auto;}
-.logo h1{ font-family: 'Kaushan Script', cursive; color: blueviolet;}
+body{ font-size: 14px; margin:0px;}
+.button { background-color: darkslategray; color:#fff;}

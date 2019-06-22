@@ -1,0 +1,29 @@
+
+<mat-toolbar>
+    <div class="logo">
+    <span ><a routerLink="/home">My Room</a></span>
+  </div> 
+  <div class="menulist" >
+      <span>
+        <!-- <a routerLink="/signin" *ngIf="!islogged">Sign In</a> -->
+        <button mat-raised-button class="button"><a routerLink="/signin" *ngIf="!islogged">Sign In</a>
+        </button>
+      </span>
+        <span *ngIf="islogged">
+          <button mat-raised-button class="button"><a routerLink="/mybooking">My Bookings</a>
+          </button>
+        </span>
+        
+          <span *ngIf="islogged">
+            <button mat-raised-button class="button"><a routerLink="/myprofile">My Profile</a>
+            </button>
+          </span>
+
+          <span *ngIf="islogged">
+            <button mat-raised-button class="button" (click)="signout()"><a routerLink="/signin">Log Out</a>
+            </button>
+          </span>
+    </div>
+  
+      <div class="clear"></div>
+    </mat-toolbar>

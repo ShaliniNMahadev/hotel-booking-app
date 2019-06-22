@@ -1,7 +1,6 @@
-import { Booking } from "./booking.model";
+import { Booking } from './booking.model';
 
-export class Complaint
-{
+export class Complaint {
 booking: Booking[];
 complaint_content: string;
 }
